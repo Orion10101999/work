@@ -34,7 +34,8 @@ function App() {
             value={amount1}
             onChange={(e) => setAmount1(e.target.value)}
             className="border p-2 w-full"
-          />
+            required
+            />
         </div>
         <div>
           <label htmlFor="utr1" className="block text-lg">UTR Number:</label>
@@ -44,7 +45,8 @@ function App() {
             value={utr1}
             onChange={(e) => setUtr1(e.target.value)}
             className="border p-2 w-full"
-          />
+            required
+            />
         </div>
       </div>
 
@@ -58,7 +60,8 @@ function App() {
             value={amount2}
             onChange={(e) => setAmount2(e.target.value)}
             className="border p-2 w-full"
-          />
+            required
+            />
         </div>
         <div>
           <label htmlFor="utr2" className="block text-lg">UTR Number:</label>
@@ -68,6 +71,7 @@ function App() {
             value={utr2}
             onChange={(e) => setUtr2(e.target.value)}
             className="border p-2 w-full"
+            required
           />
         </div>
       </div>
