@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-import './App.css'; // Ensure Tailwind imports are here
 
 function App() {
   const [amount1, setAmount1] = useState('');
@@ -9,6 +8,16 @@ function App() {
   const [utr2, setUtr2] = useState('');
 
   const handleCheckMatch = () => {
+    // Check if all fields are filled
+    if (!amount1 || !utr1 || !amount2 || !utr2) {
+      toast.error('Please fill out all fields', {
+        position: 'top-center',
+        duration: 3000,
+      });
+      return;
+    }
+
+    // Check if amounts and UTRs match
     if (amount1 === amount2 && utr1 === utr2) {
       toast.success('Sahi hai', {
         position: 'top-center',
@@ -23,9 +32,9 @@ function App() {
   };
 
   return (
-    <div className="p-2 overflow-hidden">
+    <div className="p-2 flex justify-center flex-col items-center bg-slate-300 h-screen">
       <div className="mb-4">
-        <h2 className="text-xl font-semibold mb-2">First Set of Inputs</h2>
+        <h2 className="text-xl font-semibold mb-2 text-green-700">First Set of Inputs</h2>
         <div className="mb-4">
           <label htmlFor="amount1" className="block text-lg">Amount:</label>
           <input
@@ -34,7 +43,6 @@ function App() {
             value={amount1}
             onChange={(e) => setAmount1(e.target.value)}
             className="border p-2 w-full"
-            required
             />
         </div>
         <div>
@@ -45,13 +53,12 @@ function App() {
             value={utr1}
             onChange={(e) => setUtr1(e.target.value)}
             className="border p-2 w-full"
-            required
-            />
+          />
         </div>
       </div>
 
       <div className="mb-6">
-        <h2 className="text-xl font-semibold mb-2">Second Set of Inputs</h2>
+        <h2 className="text-xl font-semibold mb-2 text-red-700">Second Set of Inputs</h2>
         <div className="mb-4">
           <label htmlFor="amount2" className="block text-lg">Amount:</label>
           <input
@@ -60,8 +67,7 @@ function App() {
             value={amount2}
             onChange={(e) => setAmount2(e.target.value)}
             className="border p-2 w-full"
-            required
-            />
+          />
         </div>
         <div>
           <label htmlFor="utr2" className="block text-lg">UTR Number:</label>
@@ -71,7 +77,6 @@ function App() {
             value={utr2}
             onChange={(e) => setUtr2(e.target.value)}
             className="border p-2 w-full"
-            required
           />
         </div>
       </div>
