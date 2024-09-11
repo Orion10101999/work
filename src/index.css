@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom styles for react-hot-toast notifications */
+.react-hot-toast {
+    font-size: 1.25rem; /* Increase the font size */
+    padding: 1rem; /* Increase the padding */
+  }
+  
+  .react-hot-toast.success {
+    background-color: #4CAF50; /* Example green background for success */
+  }
+  
+  .react-hot-toast.error {
+    background-color: #F44336; /* Example red background for error */
+  }
+  

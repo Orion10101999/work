@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './App.css'; // Ensure you have your tailwind imports here
+import toast, { Toaster } from 'react-hot-toast';
+import './App.css'; // Ensure Tailwind imports are here
 
 function App() {
   const [amount1, setAmount1] = useState('');
@@ -9,9 +10,15 @@ function App() {
 
   const handleCheckMatch = () => {
     if (amount1 === amount2 && utr1 === utr2) {
-      alert('true');
+      toast.success('Sahi hai', {
+        position: 'top-center',
+        duration: 3000,
+      });
     } else {
-      alert('false');
+      toast.error('Galat Hai', {
+        position: 'top-center',
+        duration: 3000,
+      });
     }
   };
 
@@ -73,6 +80,9 @@ function App() {
       >
         Check Match
       </button>
+
+      {/* Add Toaster here */}
+      <Toaster />
     </div>
   );
 }
