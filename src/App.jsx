@@ -23,10 +23,8 @@ function App() {
   };
 
   return (
-    <div className="p-8">
-      <h1 className="text-2xl font-bold mb-4">Input Match Checker</h1>
-
-      <div className="mb-6">
+    <div className="p-2 overflow-hidden">
+      <div className="mb-4">
         <h2 className="text-xl font-semibold mb-2">First Set of Inputs</h2>
         <div className="mb-4">
           <label htmlFor="amount1" className="block text-lg">Amount:</label>
